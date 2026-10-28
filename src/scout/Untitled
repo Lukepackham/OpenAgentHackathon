@@ -1,0 +1,2 @@
+cd C:\Users\lukep\zetaris-platform
+docker compose up -d --force-recreate bootstrap

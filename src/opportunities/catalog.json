@@ -1,0 +1,226 @@
+{
+  "source": "local-catalog",
+  "note": "Sample listings for the hackathon demo. Application links point at example.com so the app never sends a student to a guessed employer page.",
+  "opportunities": [
+    {
+      "id": "northwind-intern",
+      "title": "Software Engineering Intern",
+      "organisation": "Northwind Labs",
+      "type": "internship",
+      "location": "Manchester, UK",
+      "remote": false,
+      "skills": ["javascript", "python", "git"],
+      "interests": ["web", "backend"],
+      "eligibility": ["undergraduate"],
+      "deadline": "2026-11-20",
+      "requirements": [
+        "Enrolled on an undergraduate degree",
+        "Coursework or a project using JavaScript or Python",
+        "Able to spend 12 weeks in Manchester"
+      ],
+      "url": "https://example.com/opportunities/northwind-intern",
+      "summary": "Build small features on a student-facing web product with a mentor on the team."
+    },
+    {
+      "id": "harbour-placement",
+      "title": "Data Analyst Placement",
+      "organisation": "Harbour & Co",
+      "type": "placement",
+      "location": "Leeds, UK",
+      "remote": false,
+      "skills": ["python", "sql", "excel"],
+      "interests": ["data"],
+      "eligibility": ["undergraduate"],
+      "deadline": "2026-12-01",
+      "requirements": [
+        "A placement year or a degree that allows a year in industry",
+        "Comfortable with spreadsheets and one of Python or SQL"
+      ],
+      "url": "https://example.com/opportunities/harbour-placement",
+      "summary": "A year-long placement turning operational data into weekly briefing notes."
+    },
+    {
+      "id": "civic-hack",
+      "title": "City Data Hackathon",
+      "organisation": "Civic Hack Weekend",
+      "type": "hackathon",
+      "location": "Manchester, UK",
+      "remote": false,
+      "skills": ["javascript", "python"],
+      "interests": ["data", "civic"],
+      "eligibility": ["any-student"],
+      "deadline": "2026-10-31",
+      "requirements": [
+        "Open to any current student",
+        "Teams of two to four form on the day",
+        "Bring a laptop"
+      ],
+      "url": "https://example.com/opportunities/civic-hack",
+      "summary": "A weekend hackathon using open city datasets. Beginners are welcome on mixed teams."
+    },
+    {
+      "id": "pixel-design",
+      "title": "Product Design Intern",
+      "organisation": "Pixel Foundry",
+      "type": "internship",
+      "location": "Remote",
+      "remote": true,
+      "skills": ["figma", "css"],
+      "interests": ["design"],
+      "eligibility": ["undergraduate"],
+      "deadline": "2027-01-15",
+      "requirements": [
+        "A portfolio of three interface or poster projects",
+        "Remote within the UK"
+      ],
+      "url": "https://example.com/opportunities/pixel-design",
+      "summary": "Design internship for students who want to practise interface work with a real critique cycle."
+    },
+    {
+      "id": "greengrid-grad",
+      "title": "Junior Software Engineer",
+      "organisation": "GreenGrid",
+      "type": "job",
+      "location": "Birmingham, UK",
+      "remote": false,
+      "skills": ["javascript", "react"],
+      "interests": ["web"],
+      "eligibility": ["graduate"],
+      "deadline": "2026-11-30",
+      "requirements": [
+        "Graduating this academic year or already graduated",
+        "A project you can demo that uses JavaScript"
+      ],
+      "url": "https://example.com/opportunities/greengrid-grad",
+      "summary": "Entry-level engineering role on the energy-usage dashboard team."
+    },
+    {
+      "id": "pathways-placement",
+      "title": "Business Analyst Placement",
+      "organisation": "Pathways Health",
+      "type": "placement",
+      "location": "London, UK",
+      "remote": false,
+      "skills": ["excel", "writing"],
+      "interests": ["health"],
+      "eligibility": ["undergraduate"],
+      "deadline": "2026-11-10",
+      "requirements": [
+        "Placement year student",
+        "Clear writing samples",
+        "Right to work a placement in the UK"
+      ],
+      "url": "https://example.com/opportunities/pathways-placement",
+      "summary": "Help clinical teams describe the data they need. No prior health-service job is required."
+    },
+    {
+      "id": "oss-sprint",
+      "title": "Open Source Student Sprint",
+      "organisation": "Open Source Sprint",
+      "type": "hackathon",
+      "location": "Remote",
+      "remote": true,
+      "skills": ["git", "python", "javascript"],
+      "interests": ["open-source", "web"],
+      "eligibility": ["any-student"],
+      "deadline": "2026-12-12",
+      "requirements": [
+        "Any current student",
+        "Git installed before the opening session"
+      ],
+      "url": "https://example.com/opportunities/oss-sprint",
+      "summary": "A remote weekend contributing a small pull request to a student-maintained project."
+    },
+    {
+      "id": "fieldnote-marketing",
+      "title": "Marketing Intern",
+      "organisation": "Fieldnote",
+      "type": "internship",
+      "location": "London, UK",
+      "remote": false,
+      "skills": ["writing", "social-media"],
+      "interests": ["marketing"],
+      "eligibility": ["undergraduate"],
+      "deadline": "2026-09-01",
+      "requirements": [
+        "Two writing samples",
+        "Available in London for eight weeks"
+      ],
+      "url": "https://example.com/opportunities/fieldnote-marketing",
+      "summary": "Closed sample listing, kept so the app can show a passed deadline instead of hiding it."
+    },
+    {
+      "id": "alder-mech",
+      "title": "Mechanical Engineering Intern",
+      "organisation": "Alder Robotics",
+      "type": "internship",
+      "location": "Sheffield, UK",
+      "remote": false,
+      "skills": ["cad", "matlab"],
+      "interests": ["robotics"],
+      "eligibility": ["undergraduate"],
+      "deadline": "2027-02-01",
+      "requirements": [
+        "Studying mechanical, mechatronic, or a closely related degree",
+        "A CAD coursework sample"
+      ],
+      "url": "https://example.com/opportunities/alder-mech",
+      "summary": "Summer internship prototyping a small robot arm with the hardware team."
+    },
+    {
+      "id": "ledger-grad",
+      "title": "Graduate Software Engineer",
+      "organisation": "Ledger & Lane",
+      "type": "job",
+      "location": "Remote",
+      "remote": true,
+      "skills": ["java", "sql"],
+      "interests": ["backend"],
+      "eligibility": ["graduate"],
+      "deadline": "2026-11-18",
+      "requirements": [
+        "Graduating this year",
+        "Able to explain a database project in an interview"
+      ],
+      "url": "https://example.com/opportunities/ledger-grad",
+      "summary": "First job on a payments ledger. The team pairs every new graduate with a mentor."
+    },
+    {
+      "id": "campus-radio",
+      "title": "Audio Production Placement",
+      "organisation": "Campus Radio Network",
+      "type": "placement",
+      "location": "Manchester, UK",
+      "remote": false,
+      "skills": ["audio", "communication"],
+      "interests": ["media"],
+      "eligibility": ["undergraduate"],
+      "deadline": "2026-12-05",
+      "requirements": [
+        "Placement-year student",
+        "A short recording you can share"
+      ],
+      "url": "https://example.com/opportunities/campus-radio",
+      "summary": "Produce interview segments for a student news show based in Manchester."
+    },
+    {
+      "id": "brightpath-security",
+      "title": "Cybersecurity Intern",
+      "organisation": "BrightPath",
+      "type": "internship",
+      "location": "Edinburgh, UK",
+      "remote": false,
+      "skills": ["security", "python", "linux"],
+      "interests": ["security"],
+      "eligibility": ["undergraduate"],
+      "deadline": "2027-01-08",
+      "requirements": [
+        "Undergraduate in computing or a related subject",
+        "Interest in defensive security, not attack instructions",
+        "Able to join the Edinburgh office for ten weeks"
+      ],
+      "url": "https://example.com/opportunities/brightpath-security",
+      "summary": "Defensive security internship: log review, documentation, and supervised lab exercises."
+    }
+  ]
+}

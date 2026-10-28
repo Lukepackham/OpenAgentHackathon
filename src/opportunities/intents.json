@@ -1,0 +1,135 @@
+{
+  "version": 1,
+  "intents": [
+    {
+      "id": "GENERAL",
+      "category": "general",
+      "description": "Safe fallback when the request is not about finding or preparing a student opportunity.",
+      "parameters": { "type": "object", "properties": {} },
+      "capabilities": [],
+      "riskClass": "low",
+      "surfaces": ["chat", "api"],
+      "roles": ["*"],
+      "examples": [
+        "What's the weather tomorrow?",
+        "hello there",
+        "what can you help me with?"
+      ],
+      "version": 1
+    },
+    {
+      "id": "opportunity.search",
+      "category": "opportunity",
+      "description": "Find internships, placements, hackathons, or entry-level jobs that fit a student's skills, interests, location, and eligibility.",
+      "parameters": {
+        "type": "object",
+        "required": ["focus"],
+        "properties": {
+          "focus": { "type": "string", "description": "A skill, interest, subject, or opportunity type to search for." },
+          "location": { "type": "string" },
+          "type": { "type": "string", "enum": ["internship", "placement", "hackathon", "job"] }
+        }
+      },
+      "capabilities": ["catalog.search", "profile.read"],
+      "riskClass": "low",
+      "surfaces": ["chat", "api"],
+      "roles": ["student", "mentor", "careers-adviser"],
+      "examples": [
+        "Find me opportunities",
+        "Find internships that match my skills",
+        "Find software internships in Manchester",
+        "Show me hackathons I can enter",
+        "What entry-level jobs are open?",
+        "Find placements in data"
+      ],
+      "version": 1
+    },
+    {
+      "id": "opportunity.explain",
+      "category": "opportunity",
+      "description": "Explain why a named opportunity matches the student, including requirements and the deadline.",
+      "parameters": {
+        "type": "object",
+        "required": ["target"],
+        "properties": {
+          "target": { "type": "string" },
+          "focus": { "type": "string" }
+        }
+      },
+      "capabilities": ["catalog.search", "profile.read"],
+      "riskClass": "low",
+      "surfaces": ["chat", "api"],
+      "roles": ["student", "mentor", "careers-adviser"],
+      "examples": [
+        "Why does the Northwind internship match me?",
+        "Explain why Harbour and Co is a fit"
+      ],
+      "version": 1
+    },
+    {
+      "id": "opportunity.compare",
+      "category": "opportunity",
+      "description": "Compare matching opportunities and say which is the closer fit.",
+      "parameters": {
+        "type": "object",
+        "required": ["focus"],
+        "properties": {
+          "focus": { "type": "string" },
+          "location": { "type": "string" }
+        }
+      },
+      "capabilities": ["catalog.search", "profile.read"],
+      "riskClass": "low",
+      "surfaces": ["chat", "api"],
+      "roles": ["student", "mentor", "careers-adviser"],
+      "examples": [
+        "Compare the opportunities that fit my skills",
+        "Which opportunity is a better fit for me?"
+      ],
+      "version": 1
+    },
+    {
+      "id": "application.draft",
+      "category": "application",
+      "description": "Draft short application notes for the student to edit. This never sends an application.",
+      "parameters": {
+        "type": "object",
+        "required": ["target"],
+        "properties": {
+          "target": { "type": "string" },
+          "focus": { "type": "string" }
+        }
+      },
+      "capabilities": ["catalog.search", "profile.read"],
+      "riskClass": "medium",
+      "surfaces": ["chat", "api"],
+      "roles": ["student", "mentor", "careers-adviser"],
+      "examples": [
+        "Draft application notes for the Northwind internship",
+        "Help me write a short application for Harbour and Co"
+      ],
+      "version": 1
+    },
+    {
+      "id": "application.submit",
+      "category": "application",
+      "description": "Submit an application to an employer. High risk: requires the student's explicit confirmation and still does not send anything in this demo.",
+      "parameters": {
+        "type": "object",
+        "required": ["target"],
+        "properties": {
+          "target": { "type": "string" }
+        }
+      },
+      "capabilities": ["catalog.search", "approval.require"],
+      "riskClass": "high",
+      "surfaces": ["chat", "api"],
+      "roles": ["student"],
+      "examples": [
+        "Submit my application to Northwind Labs",
+        "Apply to the GreenGrid job now"
+      ],
+      "version": 1
+    }
+  ]
+}

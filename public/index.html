@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Opportunity Scout</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="mast">
+      <div>
+        <p class="eyebrow">Open Agent Hackathon 2026</p>
+        <h1>Opportunity Scout</h1>
+        <p class="lede">
+          Read a CV locally, confirm the skills it actually states, then see three career positions and the roadmap for the one you choose.
+        </p>
+      </div>
+      <p id="source-status" class="status">Checking the data source…</p>
+    </header>
+
+    <main class="layout">
+      <ol class="steps" aria-label="Demo steps">
+        <li id="step-cv" class="current">1. CV</li>
+        <li id="step-confirm">2. Confirm profile</li>
+        <li id="step-fit">3. Top 3 positions</li>
+        <li id="step-roadmap">4. Roadmap</li>
+      </ol>
+
+      <section class="panel" id="cv-panel" aria-labelledby="cv-heading">
+        <h2 id="cv-heading">Upload or paste a CV</h2>
+        <p class="note">TXT, DOCX, and text-based PDF files are read on this machine. If a file cannot be read, paste the text. Nothing is sent to an external AI service.</p>
+        <label class="stack">CV file
+          <input id="cv-file" type="file" accept=".txt,.docx,.pdf,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+        </label>
+        <label class="stack">Or paste the CV text
+          <textarea id="cv-text" rows="8" placeholder="Paste the CV here"></textarea>
+        </label>
+        <p id="cv-note" class="note"></p>
+        <button id="extract" type="button">Extract profile</button>
+      </section>
+
+      <section class="panel" id="review-panel" hidden aria-labelledby="review-heading">
+        <h2 id="review-heading">Confirm what was found</h2>
+        <p class="note">Only phrases that appeared in the CV were added. Edit anything that should not be used.</p>
+        <label class="stack">Confirmed skills
+          <input id="confirmed-skills" autocomplete="off" />
+        </label>
+        <label class="stack">Education lines found in the text
+          <textarea id="confirmed-education" rows="3"></textarea>
+        </label>
+        <label class="stack">Interests
+          <input id="confirmed-interests" autocomplete="off" placeholder="Optional, for example web or research" />
+        </label>
+        <label class="stack">Goal
+          <input id="confirmed-goals" autocomplete="off" placeholder="Optional, for example become a data analyst" />
+        </label>
+        <div class="row">
+          <label>Location <input id="confirmed-location" autocomplete="off" /></label>
+          <label>Stage
+            <select id="confirmed-stage">
+              <option value="">Not set</option>
+              <option value="undergraduate">Undergraduate</option>
+              <option value="postgraduate">Postgraduate</option>
+              <option value="graduate">Graduate / first job</option>
+            </select>
+          </label>
+        </div>
+        <button id="match" type="button">Show my top 3 positions</button>
+      </section>
+
+      <section id="fit-panel" class="results" hidden aria-live="polite"></section>
+
+      <details class="panel legacy" id="learning-browse">
+        <summary>Optional catalogue browse</summary>
+        <p class="note">This list is not filtered to a career position. Use a position roadmap for recommendations that match your gaps. Every card is demo data, not a verified event or an accredited qualification.</p>
+        <div id="learning-filters" class="filters"></div>
+        <div id="learning-results" class="results"></div>
+      </details>
+
+      <section class="panel" id="discovery-panel" aria-labelledby="discovery-heading">
+        <h2 id="discovery-heading">Discovery review</h2>
+        <p class="note">Greenhouse board listings and labelled demo seeds stay in this queue. Approving one does not add it to the student job catalogue, and nothing here is sent to an employer.</p>
+        <div class="row">
+          <label>Review token
+            <input id="discovery-token" type="password" autocomplete="off" placeholder="Needed for approve, reject, and save" />
+          </label>
+          <label>Search
+            <input id="discovery-search" autocomplete="off" placeholder="Title, employer, or skill" />
+          </label>
+        </div>
+        <div id="discovery-filters" class="filters"></div>
+        <p id="discovery-note" class="note"></p>
+        <div id="discovery-results" class="results"></div>
+        <h3>Save a listing you opened</h3>
+        <p class="note">This records a candidate for review. It does not submit an application.</p>
+        <form id="discovery-submit">
+          <div class="row">
+            <label>Role <input id="manual-title" required autocomplete="off" /></label>
+            <label>Employer <input id="manual-organisation" required autocomplete="off" /></label>
+          </div>
+          <div class="row">
+            <label>Location <input id="manual-location" autocomplete="off" /></label>
+            <label>Source
+              <select id="manual-source">
+                <option value="employer">Employer page</option>
+                <option value="gradcracker">Gradcracker</option>
+                <option value="trackr">Trackr</option>
+              </select>
+            </label>
+          </div>
+          <label class="stack">Application link <input id="manual-url" type="url" required placeholder="https://" /></label>
+          <label class="stack">Skills <input id="manual-skills" autocomplete="off" placeholder="python, sql" /></label>
+          <label class="stack">Description <textarea id="manual-summary" rows="3"></textarea></label>
+          <button type="submit">Save to the review queue</button>
+        </form>
+      </section>
+
+      <details class="panel legacy">
+        <summary>Existing Scout search</summary>
+        <section aria-labelledby="profile-heading">
+          <h2 id="profile-heading">Your profile</h2>
+          <form id="profile-form">
+            <label>Skills <input id="skills" name="skills" value="javascript, python" autocomplete="off" /></label>
+            <label>Interests <input id="interests" name="interests" value="web" autocomplete="off" /></label>
+            <label>Location <input id="location" name="location" value="Manchester" autocomplete="off" /></label>
+            <label>Stage
+              <select id="eligibility" name="eligibility">
+                <option value="">Not set</option>
+                <option value="undergraduate" selected>Undergraduate</option>
+                <option value="postgraduate">Postgraduate</option>
+                <option value="graduate">Graduate / first job</option>
+              </select>
+            </label>
+            <label class="check"><input id="remote" type="checkbox" checked /> Remote is fine</label>
+          </form>
+        </section>
+        <section aria-labelledby="ask-heading">
+          <h2 id="ask-heading">Ask</h2>
+          <form id="ask-form">
+            <label class="stack">
+              What are you looking for?
+              <textarea id="prompt" rows="4">Find software internships in Manchester</textarea>
+            </label>
+            <div class="row">
+              <button type="submit">Scout opportunities</button>
+              <button type="button" id="sample-vague">Try a vague request</button>
+              <button type="button" id="sample-risk">Try a blocked request</button>
+            </div>
+          </form>
+          <div id="decision" class="decision" hidden></div>
+          <div id="results" class="results"></div>
+        </section>
+      </details>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

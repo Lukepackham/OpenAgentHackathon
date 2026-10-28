@@ -1,0 +1,6 @@
+node_modules/
+.env
+*.log
+tmp-*
+data/discovery-candidates.json
+data/*.tmp
